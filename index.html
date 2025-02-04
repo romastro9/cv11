@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Shop</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .navbar {
+            background-color: #1e3a8a;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar img {
+            height: 40px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            color: #fbbf24;
+            transform: translateY(-2px);
+        }
+        .hero {
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            animation: slideIn 2s ease-in-out;
+        }
+        .hero .cta-button {
+            background-color: #fbbf24;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .hero .cta-button:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 10px;
+        }
+        .product {
+            background: white;
+            padding: 20px;
+            width: 280px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .buy-button {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .buy-button:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        .product img:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer a {
+            color: #fbbf24;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+            color: #d97706;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .product {
+                width: calc(50% - 20px);
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .product {
+                width: 100%;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo.png" alt="Logo">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact Me</a>
+    </div>
+
+    <div class="hero" id="home">
+        <h1>Welcome to My Professional Shop</h1>
+        <p>Discover our exclusive range of premium products tailored for you.</p>
+        <a href="#products" class="cta-button">Shop Now</a>
+    </div>
+
+    <div class="container" id="products">
+        <script>
+            // Array of product data (you can update the image URLs here)
+            const products = [
+                { id: 1, name: "Product 1", description: "High-quality and stylish Product 1 just for you.", price: 4, image: "https://static.vecteezy.com/system/resources/previews/013/948/546/non_2x/capcut-logo-on-transparent-white-background-free-vector.jpg" },
+                { id: 2, name: "Product 2", description: "High-quality and stylish Product 2 just for you.", price: 4, image: "product2.jpg" },
+                { id: 3, name: "Product 3", description: "High-quality and stylish Product 3 just for you.", price: 6, image: "product3.jpg" },
+                { id: 4, name: "Product 4", description: "High-quality and stylish Product 4 just for you.", price: 8, image: "product4.jpg" },
+                { id: 5, name: "Product 5", description: "High-quality and stylish Product 5 just for you.", price: 10, image: "product5.jpg" },
+                { id: 6, name: "Product 6", description: "High-quality and stylish Product 6 just for you.", price: 12, image: "product6.jpg" },
+                { id: 7, name: "Product 7", description: "High-quality and stylish Product 7 just for you.", price: 14, image: "product7.jpg" },
+                { id: 8, name: "Product 8", description: "High-quality and stylish Product 8 just for you.", price: 16, image: "product8.jpg" },
+                { id: 9, name: "Product 9", description: "High-quality and stylish Product 9 just for you.", price: 18, image: "product9.jpg" },
+                { id: 10, name: "Product 10", description: "High-quality and stylish Product 10 just for you.", price: 20, image: "product10.jpg" },
+                { id: 11, name: "Product 11", description: "High-quality and stylish Product 11 just for you.", price: 22, image: "product11.jpg" },
+                { id: 12, name: "Product 12", description: "High-quality and stylish Product 12 just for you.", price: 24, image: "product12.jpg" },
+                { id: 13, name: "Product 13", description: "High-quality and stylish Product 13 just for you.", price: 26, image: "product13.jpg" },
+                { id: 14, name: "Product 14", description: "High-quality and stylish Product 14 just for you.", price: 28, image: "product14.jpg" },
+                { id: 15, name: "Product 15", description: "High-quality and stylish Product 15 just for you.", price: 30, image: "product15.jpg" }
+            ];
+
+            // Function to generate product cards
+            function generateProductCards() {
+                const container = document.querySelector('.container');
+                products.forEach(product => {
+                    const productCard = `
+                        <div class="product">
+                            <img src="${product.image}" alt="${product.name}">
+                            <h2>${product.name}</h2>
+                            <p>${product.description}</p>
+                            <p><strong>$${product.price}</strong></p>
+                            <a href="https://t.me/Romastro9" class="buy-button">Buy Now</a>
+                        </div>
+                    `;
+                    container.innerHTML += productCard;
+                });
+            }
+
+            // Call the function to generate product cards
+            generateProductCards();
+        </script>
+    </div>
+
+    <div class="footer" id="contact">
+        <p>Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>Follow me on <a href="https://t.me/Romastro9">Telegram</a></p>
+    </div>
+
+</body>
+</html>
